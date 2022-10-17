@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phk-gb-27C">
-                                <rect key="frame" x="131" y="430" width="153" height="36"/>
+                                <rect key="frame" x="130.5" y="430" width="153" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Hit me, I dare you"/>
                                 <connections>
-                                    <action selector="THE_BUTTON:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWH-bA-aCm"/>
+                                    <action selector="THE_BUTTONWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q1A-Jo-dnH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -32,9 +32,6 @@
                             <constraint firstItem="Phk-gb-27C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xPe-eH-mpa"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="THE_BUTTON" destination="Phk-gb-27C" id="clJ-d2-wMN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

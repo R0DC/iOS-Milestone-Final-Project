@@ -9,29 +9,39 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var THE_BUTTON_lbl: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func THE_BUTTON(_ sender: Any) {
-        let taunts:[String] = ["Haha, missed!","Are you even trying bro","Not there, here!","Just take the L man"]
-        let rand_num = Int.random(in: 1...4)
-        if (rand_num == 1) {
-            THE_BUTTON.setTitle(taunts[1])
-        }
-        else if (rand_num == 2) {
-            THE_BUTTON.setTitle(taunts[2])
-        }
+    @IBAction func THE_BUTTON(button: UIButton) {
         
-        else if (rand_num == 3) {
-            THE_BUTTON.setTitle(taunts[3])
-        }
+        // Button location randomizer //
         
-        else if (rand_num == 4) {
-            THE_BUTTON.setTitle(taunts[4])
-        }
+        // Find the button's width and height
+        let buttonWidth = button.frame.width
+        let buttonHeight = button.frame.height
+        
+        // Find the width and height of the enclosing
+        let viewWidth = button.superview!.bounds.width
+        let viewHeight = button.superview!.bounds.height
+
+        // Compute width and height of the area to contain the button's center
+        let xwidth = viewWidth - buttonWidth
+        let yheight = viewHeight - buttonHeight
+
+        // Generate a random x and y offset
+        let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
+        let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
+
+        // Offset the button's center by the random offsets.
+        button.center.x = xoffset + buttonWidth / 2
+        button.center.y = yoffset + buttonHeight / 2
+        
+        // Text randomizer
+        let taunts = ["Haha, missed!","Are you even trying bro","Not there, here!","Just take the L man"]
+        let randomTaunt = taunts.randomElement() // Assign random text to label
+        button.setTitle(randomTaunt, for: .normal) // Change label text once button is pressed
     }
     
 }
