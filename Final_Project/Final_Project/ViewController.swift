@@ -41,7 +41,13 @@ class ViewController: UIViewController {
         // Text randomizer
         let taunts = ["Haha, missed!","Are you even trying bro","Not there, here!","Just take the L man"]
         let randomTaunt = taunts.randomElement() // Assign random text to label
+//        let tauntRed = CGFloat(Float.random(in: 100..<150))
+//        let tauntGreen = CGFloat(Float.random(in: 100..<150))
+//        let tauntBlue = CGFloat(Float.random(in: 100..<150))
+//        let tauntColor = UIColor(red: tauntRed, green: tauntGreen, blue: tauntBlue, alpha: 1) // Randomize button text color
+//        button.setTitleColor(tauntColor, for: .normal) // Change button color
         button.setTitle(randomTaunt, for: .normal) // Change label text once button is pressed
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(Int.random(in:10...36))) // Change button font
     }
     
 }
